@@ -17,7 +17,7 @@ jobs:
           - "1.26.x"
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
 
       - name: Setup asdf
         uses: asdf-vm/actions/setup@9cd779f40fe38688dd19505ccbc4eaaf018b44e7
@@ -49,9 +49,9 @@ jobs:
       GOLANG: ${{ matrix.golang }}
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v7
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v7
         with:
           go-version: ${{ matrix.golang }}
       - name: Cache Go modules
@@ -78,7 +78,7 @@ jobs:
       #- name: Run tests with goleak
       #  run: go test -v -tags=goleak -test.timeout=10m ./...
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v7
         with:
           file: ./coverage.txt
           flags: unittests
@@ -98,9 +98,9 @@ jobs:
       GOLANG: ${{ matrix.golang }}
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v7
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v7
         with:
           go-version: ${{ matrix.golang }}
       - name: Cache Go modules
@@ -127,7 +127,7 @@ jobs:
       #- name: Run tests with goleak
       #  run: go test -v -tags=goleak -test.timeout=10m ./...
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v7
         with:
           file: ./coverage.txt
           flags: unittests
